@@ -11,6 +11,8 @@ def is_open(ip, port):
         return 'Port is open'
     except ConnectionRefusedError:
         return 'Connection Refused'
+    except TimeoutError:
+        return 'Request timed out.'
 
 
 if len(sys.argv) == 1:
